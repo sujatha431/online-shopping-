@@ -1,0 +1,27 @@
+
+Header part -> Adarsh --> Done
+footer -> Deepak -> Done
+mainpage -> cards -> sayali --> Done
+Login Model design -> Keerthi --> Done
+------------------------------------------------------------
+Forgot Password ---> Chaitanya ---> Done
+Login popup validations --> Chaitanya ---> Done
+    accountid - max of 30 char, should allow only one speical symbol _ 
+    should accept only alphabets and numerics
+    Should not start with a numeric 
+
+Adding Capthca in login page -> sayali --> done
+login button should be enabled only after valid capcha
+----------------------------------------------------------------------------------------
+
+Capthca to image -> sayali ---> done
+
+
+----------------------------------------------------
+
+Add eye icon with functionality - Navya ---> done
+
+Remember by id and pwd - DONE -Laxmi
+
+new user singup template "(username, accountid, pwd, reenderpwd, mailid) --> Chaitanya --> Done
+

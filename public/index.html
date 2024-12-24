@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.min.css">
+  <script src="lib/capthcaGenerator.js"></script>
+  <script src="lib/eyeIcon.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="lib/axios.js"></script>
+  <script src="lib/handlebars.min.js"></script>
+  <script src="lib/jquery.js"></script>
+  <script src="lib/localStorage.js" defer></script>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/productDetailsPage.css">
+  <script src="javascripts/onload.js"></script>
+  <script src="javascripts/login.js"></script>
+  <script src="javascripts/productDetailsLoad.js"></script>
+  <script src="javascripts/validations.js"></script>
+  <script src="javascripts/newSignup.js"></script>
+</head>
+
+
+<body>
+  
+  <!--Header Section-->
+  <header>
+    <div class="fluid-container">
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top navbar-shadow">
+        <div class="container-fluid d-flex align-items-center justify-content-between">
+
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="images/header/logo.png" alt="Logo" width="40" height="40"
+              class="d-inline-block align-text-top main-logo">
+          </a>
+
+          <!-- Centered Search Form Container -->
+          <div class="d-flex justify-content-center flex-grow-1">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2 search-bar" type="search" placeholder="Search for items"
+                aria-label="Search">
+              <button class="btn btn-outline-success btn-search" type="submit">Search</button>
+            </form>
+          </div>
+
+          <!-- Toggle button for collapsing items on smaller screens -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible Login and Cart Buttons -->
+          <div class="collapse navbar-collapse" id="navbarContent">
+            <div class="d-flex ms-auto">
+
+              <!-- Login Section -->
+              <div class="me-5" id="logoutBlock">
+                <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                  <img src="images/header/login.png" alt="User Icon" width="25" height="25"
+                    class="me-1 login">
+                  <span class="login-text">Logout</span>
+                </a>
+              </div>
+              <div class="me-5" id="loginBlock">
+                <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="modal" data-bs-target="#loginModal">
+                  <img src="images/header/login.png" alt="User Icon" width="25" height="25"
+                    class="me-1 login">
+                  <span class="login-text">Login</span>
+                </a>
+              </div>
+
+              <!-- Cart Section -->
+              <div class="me-5">
+                <a href="#" class="d-flex align-items-center text-decoration-none">
+                  <img src="images/header/cart.png" alt="Cart Icon" width="25" height="25" class="me-1 cart">
+                  <span class="cart-text">Cart</span>
+                </a>
+              </div>
+
+              <!-- Help Section -->
+              <div class="me-5">
+                <a href="#" class="d-flex align-items-center text-decoration-none">
+                  <img src="images/header/help.png" alt="Help Icon" width="25" height="25" class="me-1 help">
+                  <span class="help-text">Help</span>
+                </a>
+              </div>
+
+              <!-- Notification Section -->
+              <div class="me-5">
+                <a href="#" class="d-flex align-items-center text-decoration-none">
+                  <img src="images/header/notification.png" alt="Help Icon" width="25" height="25"
+                    class="me-1 help">
+                </a>
+              </div>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </header>
+  <!--Main container-->
+  
+   <!--Footer container-->
+  <div class="fluid-container">
+    <footer class="py-5 footer-panel">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <h5 class="footer-h5">Get to Know Us</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Careers</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Blogs</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">About AaoShopKaro</a>
+            </li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Investor
+                Relations</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">AaoShopKaro
+                Devices</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">AaoShopKaro
+                Science</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h5 class="footer-h5">Male Money with Us</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Sell products on
+                AaoShopKaro</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Sell on AaoShopKaro
+                Business</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Sell apps on
+                AaoShopKaro</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Become an
+                Affiliate</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Advertise Your
+                Products</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Self-Publish with
+                Us</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Host an AaoShopKaro
+                Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <h5 class="footer-h5">Let Us Help You</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">AaoShopKaro and
+                COVID-19</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Your Account</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Your Orders</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Shipping Rates &
+                Policies</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Returns &
+                Replacements</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Manage Your Content
+                and Devices</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted footer-a-tag">Help</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5 class="footer-h5">Subscribe to our AaoShopKaro Channel</h5>
+            <p>Get Amazing Sales Updates.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn subscribe-btn btn" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-center py-2 my-4 border-top">
+        <p class="footer-end-pTag">© 2024 NIT Hyderabad, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-facebook footer-icons"></i></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-instagram footer-icons"></i></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><i class="bi bi-twitter-x footer-icons"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-pannel3">
+        <div class="logo"></div>
+      </div>
+    </footer>
+  </div>
+  </div>
+
+  <!-- Login popup-->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+    class="modal-lg">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1> -->
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="modal_border ">
+            <header class="form_header">Login</header>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Account Id</label>
+              <div>
+                <span style="display: none;"><i class="bi bi-envelope-at-fill mail_icon"></i></span>
+                <input type="text" class="form-control " id="userId" aria-describedby="userid"  onkeydown="validateSpace(event)">
+                <span><i class="bi bi-person-fill userIcon"></i></span>
+              </div>
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <div>
+                <span><i class="bi bi-lock pass_icon"></i></span>
+                <div class="pwdSec">
+                <input type="password" class="form-control" id="accountPassword" onkeyup="userIdValidation()" onkeydown="validateSpace(event)">
+                <span><i class="bi bi-eye-fill eye-icon" id="eye-icon-loginpage" onclick="togglePwd('#accountPassword', '#eye-icon-loginpage')"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="forgot_password">
+              <!-- <a href="#forgotpassword">Forgot password?</a> -->
+              <span class="forgotpwd" data-bs-target="#forgotModal" type="button" data-bs-toggle="modal">Forgot password?</span>
+            </div>
+            <!-- CAPTCHA Container -->
+            <div class="captcha-container d-flex align-items-center mb-3">
+              <canvas id="captchaCanvas" width="150" height="50"></canvas>
+              <button type="button" class="btn btn-link p-0 ms-2" onclick="showCaptcha()" aria-label="Refresh CAPTCHA">
+                <i class="bi bi-arrow-clockwise" style="font-size: 1.5rem;"></i>
+              </button>
+              <input type="text" id="captchaInput" placeholder="Enter CAPTCHA" required>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <div>
+              Don't have an account?<span class="forgotpwd" data-bs-target="#signUpModal" type="button" data-bs-toggle="modal">Sign Up</span>
+
+            </div>
+            <div class="signup">
+              OR SignUp Using
+              <div>
+                <i class="bi bi-google google_icon"></i>
+                <i class="bi bi-microsoft ms_icon"></i>
+                <i class="bi bi-apple apple_icon"></i>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- login modal  -->
+        <div class="modal-footer">
+          <div id="invalidMsg"></div>
+          <button type="button" id="button" onclick="validateLoginDetails()">Login</button>
+          <button type="button" class="btn foterbtn-primary" data-bs-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--========================== Sign Up ===============--> 
+<div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal-lg">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="modal_border">
+          <header class="form_header">Sign Up</header>
+          <div class="mb-3">
+            <label for="s_userName" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="s_userName" aria-describedby="userid" 
+            onfocus="showConditions1()" onblur="hideConditions1()" onkeyup="validateUserName()" onkeydown="validateSpace(event)">
+          </div>
+          <div class="mb-3">
+            <label for="s_accountId" class="form-label">Account Id</label>
+            <input type="text" class="form-control" id="s_accountId" aria-describedby="s_accountId" 
+                   onfocus="showConditions2()" onblur="hideConditions2()" onkeyup="userIdValidation()"
+                   onkeydown="validateSpace(event)">
+          </div>
+          <div class="mb-3">
+            <label for="s_emailid" class="form-label">Mail ID</label>
+            <input type="email" class="form-control" id="s_emailid" aria-describedby="s_emailid" onkeydown="validateSpace(event)">
+          </div>
+          <div class="mb-3">
+            <label for="s_accountPassword" class="form-label">Password</label>
+            <div class="pwdSec">
+            <input type="password" class="form-control" id="s_accountPassword" 
+            onkeydown="validateSpace(event)" onfocus="showPasswordConditions()" onblur="hidePasswordConditions()"
+            onkeyup="validatePassword()">
+            <span><i class="bi bi-eye-fill eye-icon" id="s-eye-icon-pwd" onclick="togglePwd('#s_accountPassword', '#s-eye-icon-pwd')"></i></span>
+            </div>
+          </div>
+          <div class="mb-3">            
+            <label for="s_reenterPassword" class="form-label">Re-Enter Password</label>
+            <div class="pwdSec">
+            <input type="password" class="form-control" id="s_reenterPassword" onkeyup="validatePassword()" onkeydown="validateSpace(event)">            
+            <span><i class="bi bi-eye-fill eye-icon" id="s-eye-icon-repwd" onclick="togglePwd('#s_reenterPassword', '#s-eye-icon-repwd')"></i></span>
+            </div>
+            <span id="tick-matched"  >✔️</span> 
+            <span id="xmark-notMatched"  >❌</span> 
+          </div>
+          <div>
+            Already have an account? <span class="forgotpwd" data-bs-target="#loginModal" type="button" data-bs-toggle="modal">Login</span>
+          </div>
+          <div class="signup">
+            OR SignUp Using
+            <div>
+              <i class="bi bi-google google_icon"></i>
+              <i class="bi bi-microsoft ms_icon"></i>
+              <i class="bi bi-apple apple_icon"></i>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- User Name validation Conditions -->
+      <div id="userNameCriteria" class="modal conditions1">
+        <ol>
+          <li id="allowedCharsCondition1">Should Contain only Alphabets</li>
+          <li id="nameLength">User Name length should be 3-30</li>
+        </ol>                
+      </div>
+
+      <!-- Account Id validation Conditions -->
+      <div id="accountIdCriteria" class="modal conditions2">
+        <ol>
+          <li id="allowedCharsCondition">Should Contain only numbers, letters, _</li>
+          <li id="IdLength">Account Id length should be 4 - 30</li>
+          <li id="First">Always start with _ or lowercase letter</li>
+        </ol>                
+      </div>
+      <!-- Password validation Conditions -->
+       <div id="passwordCriteria" class="modal conditions3">
+        <ol>
+          <li id="passlen8">Minimum 8 characters</li>
+          <li id="minOneDigit">Atleast one digit</li>
+          <li id="min3Lwr">Minimum 3 lowercase Letters</li>
+        </ol>
+       </div>
+
+      <!-- login modal footer -->
+      <div class="modal-footer">
+        <div id="invalidMsg"></div>
+        <div id="s_successMsg">
+            Registered Successfly - click            
+              <span class="forgotpwd" data-bs-target="#loginModal" type="button" data-bs-toggle="modal">Login</span>
+        </div>
+        <button type="button" id="button" onclick="signupNewUser()" >Sign up</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--=========== Logout Confirmation Modal =============-->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content shadow-lg rounded-3">
+      <!-- Modal Header -->
+      <div class="modal-header border-0 py-3 px-4">
+        <h5 class="modal-title fw-semibold text-danger" id="logoutModalLabel">Log Out of Your Account</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body text-center py-4 px-5">
+        <p class="mb-3 text-secondary fs-6">
+          Are you sure you want to log out? You will be signed out of your current session.
+        </p>
+        <div id="invalidMsg" class="text-danger small"></div>
+      </div>
+      <!-- Modal Footer -->
+      <div class="modal-footer d-flex justify-content-center border-0 py-3">
+        <button type="button" class="btn btn-outline-danger fw-semibold rounded-pill px-4" onclick="logoutUser()" data-bs-dismiss="modal">
+          Log Out
+        </button>
+        <button type="button" class="btn btn-outline-secondary fw-semibold rounded-pill px-4" data-bs-dismiss="modal">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--========== Forgot password modal ==========-->
+  <div class="modal fade" id="forgotModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-content  modal-dialog">
+      <div class=" text-left">
+        <i id="closeForgot" class="bi bi-x-circle btn" data-bs-dismiss="modal"></i>
+        <div class="forgot_head">
+          <img src="images/header/logo.png" alt="">
+          <div class="h1 text-center ">Password Reset</div>
+        </div>
+        <div class="card-body px-5">
+            <h2 class="text-success">Oops! Forgot?</h2>
+            <span class="card-text py-2">
+              Don't worry, we've all been there.Let's get you back in!
+            </span>
+            <h5 class="card-text py-2">
+              If the enterd mail is valid,you'll recieve OTP 
+            </h5>
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" id="typeEmail" placeholder="Enter your registered mail Id / mobile Number" class="form-control my-3"/>
+              </div>
+              <button type="submit" data-mdb-ripple-init class="btn btn-success w-100" data-bs-target="#passwordSetModal" data-bs-toggle="modal">Send OTP</button>
+            
+            <div class="d-flex justify-content-between mt-4">
+              <button id="backTologinButton" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-box-arrow-in-left"></i> Back to Login</button>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+  <!--================== Modal To enter OTP ========= -->
+  <div class="modal fade" id="passwordSetModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-content  modal-dialog">
+      <div class=" text-left">
+        <i id="closeForgot" class="bi bi-x-circle btn" data-bs-dismiss="modal"></i>
+        <div class="forgot_head">
+          <img src="images/header/logo.png" alt="">
+          <div class="h1 text-center ">Password Reset</div>
+        </div>
+        <div class="card-body px-5">
+            <h2 class="text-success">OTP Sent ✓</h2>
+            <span class="card-text py-2">
+              Please check the inbox of enterd mail / mobile number for OTP
+            </span>
+            <form action="">
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" id="typeEmail" placeholder="Enter OTP here " class="form-control my-3" required/>
+              </div>
+              
+              <span class="card-text h3 py-2 newpass">
+                Create New Password:
+              </span>
+              <div data-mdb-input-init class="form-outline">
+                
+                <input type="text" id="typeEmail" placeholder="Enter new password here " class="form-control my-3" required/>
+              </div>
+              <button type="submit" data-mdb-ripple-init class="btn btn-success w-100">Reset Password</button>
+            </form>
+            <div class="backButtons">
+              <div class="d-flex justify-content-between mt-4">
+                <button id="backTologinButton" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="bi bi-box-arrow-in-left"></i> Back to Login</button>
+              </div>
+              <div class="d-flex justify-content-between mt-4">
+                <button id="backToOtp" data-bs-toggle="modal" data-bs-target="#forgotModal"><i class="bi bi-box-arrow-in-left"></i> Edit/Check Id</button>
+              </div>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+
+  <!--Single product details template-->
+  <div id="single_product_template" style="display: none;">
+      <div class="single_Details">
+        <img src="{{image}}" alt="">
+        <div class="productTitle">{{title}}</div>
+        <a href="#">{{description}}</a>
+        
+        <div>Rating: {{rating.rate}}</div>
+        <div class="priceDetails">
+            <span class="currentPrice">₹{{discountPrice}}</span> 
+            <span class="actualPrice"> M.R.P: <span>₹{{price}}</span> ({{discountPercent}}% off)</span>
+        </div>
+        <div class="freeDeliveryMsg">FREE Delivery by Amazon</div>
+        <button class="btn btn-warning" onclick="addItemToCart({index})">Add to cart</button>
+    </div>
+  </div>
+<script src="javascripts/validations.js"></script>
+</body>
+
+</html>

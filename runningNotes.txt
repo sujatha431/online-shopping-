@@ -1,0 +1,131 @@
+NOV 05:
+
+Database :
+    Oracle 
+    mongodb 
+    sqlserver.
+    ...
+
+RDBMS 
+    SQL 
+        query 
+            student_details -> 
+                select sname, age, gender  from student_details
+    tables 
+        studentdata 
+            stid sname sgender sloc
+
+        studentfeedetails
+            stid lastpayment pending payment totalpay
+
+        create table student details, sname varchar(100), sage Integer, 
+
+
+    MongoDb 
+        NOSQL 
+            commands 
+        collection 
+            documents
+
+        {
+            details: [
+                {name: 'raj', age: 20, gender: 'male', passportno: 1312, panno: "Acc", feeDetails: {
+                    lastpayment: 1900,
+                    pending: 1000,
+                    total: 10000
+                }},
+                {name: 'Teena', age: 20, gender: 'male'},
+                {name: 'Krish', age: 20, gender: 'male', passportno: 1312}
+            ]
+        }
+-----------------------------------------------------------------
+
+Nov: 06
+    Steps to create a connection to mongodb server from Node js 
+
+    "mongodb" its a predefined existing node module, through which we could able to make a connection from node js to mongodb server
+
+        1. download and install mongodb node module 
+            npm install mongodb --save 
+        
+        2. creae a reference to MongoClient from mongodb module 
+            var {MongoClient} = require("mongodb");
+
+        3. Create the db url with protocol, servername, portno 
+                const dbUrl = 'mongodb://localhost:27017';
+
+        4. create a mongoclient object using dburl 
+                const mongoClient = new MongoClient(dbUrl); // specifyign the server url
+
+
+        5. create a async function to connect to db server, db, collection 
+
+            async function getDbConnection() {
+                // Use connect method to connect to the server
+                await mongoClient.connect(); // connection to the mongo server
+                const db = mongoClient.db("onlineShoppingDb"); // connection to db 
+                const collection = db.collection('useraccountdetails'); // connection to collection
+                
+                return collection.find({}).toArray(); // putting a query to db 
+            }
+
+    ----------------
+
+    Topics covered in server side / backend 
+
+        1. What is Webserver - Nodejs 
+        2. Creating webservices - POSt/GET 
+        3. Handling get data and post data 
+        4. Mongodb server 
+        5. Creating communication betwn webserver and DB 
+        6. Encryption and decrptions 
+        7. Db operations like find and insert on DB 
+        8. Creating our own node modules. 
+        9. Session management 
+        10. implemented both login and logout services from server 
+
+        Pending: 
+        1. Upload files from client to server 
+        3. Realtime data streaming - Socket io - Chat communication
+        4. Server side generated pages - Views 
+        5. Clustering 
+        6. JWT 
+
+
+Session management :
+    Session - The time between login to logout 
+
+
+--------------------------------------------
+NOV 14:
+
+import cluster from "cluster"
+
+1. download and install cluster node module
+    npm intsall cluster --save
+2. check what is the max no. of cups can be created in current systems
+    var noofCpus = require("os").availableParallelism();
+
+3. Create no. of copies based on noofCpus - cluster.fork();
+
+    for (var i = 1; i <= noofCpus; i++) {
+        cluster.fork();
+    }
+
+4. Check the process id, from every service, to see from which process its responding
+    process.pid 
+
+-----------
+
+Socketio:
+
+    diff btwn send/receive && pub/sub 
+
+    Subscription 
+
+    Publishing
+
+    external lib 
+        socket.io node module 
+        socketio.js js lib 
+-=-----------------

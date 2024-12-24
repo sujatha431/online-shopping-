@@ -1,0 +1,438 @@
+body {
+    margin: 0;
+    padding: 0;
+    padding-top: 88px;
+}
+
+.navbar-shadow {
+    box-shadow: 0 4px 10px black;
+    /* Adjust values for shadow effect */
+}
+
+header {
+    /* background-color: black; */
+    color: #fff;
+    padding: 10px;
+}
+
+.main-logo {
+    width: 230px;
+    height: 60px;
+    object-fit: inherit;
+}
+
+/* .search-bar {
+    width: 224px;
+} */
+
+.btn-search {
+    width: 100px;
+    border-radius: 5px;
+    color: black;
+    background-color: #ffac13;
+    border: none;
+}
+
+.btn-search:hover {
+    transform: translateY(-2px);
+    background-color: #ffac13;
+}
+
+.login,
+.cart,
+.help {
+    width: 30px;
+    height: 30px;
+}
+
+.login-text,
+.cart-text,
+.help-text {
+    color: #ffac13;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------------- */
+.mainPageBanner {
+
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        position: relative;
+        top: -120px;
+    }
+}
+
+/* cards */
+.pageBottomContainer {
+    position: absolute;
+    top: 65%;
+    width: 100%;
+    margin-top: -82px;
+    padding: 20px;
+}
+
+.custom-card-size {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.custom-card-size:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* ******************************************* Footer CSS ***************************************** */
+
+.footer-panel {
+    background-color: #222f3d;
+    color: white;
+    padding: 20px !important;
+    font-family: arial;
+    margin-top: 550px;
+}
+
+.footer-a-tag {
+    color: white !important;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.footer-h5 {
+    font-weight: bold;
+    padding-bottom: 1.2rem;
+}
+
+.footer-pannel3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    background-image: url("../images/logo-deisgned/logo-bg.webp");
+    background-size: 100% 100%;
+    height: 116px;
+    width: 169px;
+}
+
+.footer-end-pTag {
+    font-weight: 600 !important;
+}
+
+.footer-icons {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.footer-icons:hover {
+    color: goldenrod;
+}
+
+.subscribe-btn {
+    background-color: goldenrod !important;
+    border: 2px solid;
+    font-weight: 600;
+}
+
+/*   --------------------------LOGIN -----------------------*/
+.modal-body,
+.modal-header {
+    background-color: #303242; 
+    /* background: #394359;  */
+}
+	
+.form_body {
+    border: 1px solid black;
+    padding: 20px;
+    width: 330px;
+    margin: 10px auto;
+    background: linear-gradient(205deg, gray,black);
+    background-color: white;
+    position: relative;
+    color: #fff;
+}
+
+.form-control:hover {
+
+    background-color: whitesmoke;
+
+}
+.form_header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: initial;
+    margin: 2px;
+    font-style: italic;
+}
+
+.forgot_password {
+    text-align: right;
+}
+
+/* .id_icon {
+    position: absolute;
+    top: 127px;
+    left: 25px;
+    color: black;
+    padding-right: 100px;
+} */
+
+.pass_icon {
+    position: absolute;
+    top: 230px;
+    left: 30px;
+    color: black;
+}
+.userIcon{
+    position: relative;
+    bottom: 30px;
+    left: 90%;
+    color: #222f3d;
+}
+
+p {
+    text-align: center;
+}
+
+.google_icon,
+.ms_icon,
+.apple_icon {
+    padding: 10px;
+}
+
+.signup {
+    text-align: center;
+    padding: 10px;
+}
+.icons{
+    color: #fff;
+}
+.forgotpwd,.signuplink{
+    color: goldenrod;
+}
+#button,.cancel_btn
+{
+    background-color: goldenrod;
+}
+.cancel_text{
+    color: white;
+}
+.btn-close{
+    background-color: goldenrod;
+}
+#button{
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+.conditions1,.conditions2,.conditions3{
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 80px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px black;
+    margin: 10px 0px 5px 0px;
+    z-index: 4;
+    backdrop-filter: blur(10px);
+}
+.conditions1{
+    width: 340px;
+    height: 65px;
+    top: 50px;
+}
+.conditions2{
+    width: 340px;
+    height: 110px;
+    top: 10px;
+}
+.conditions3{
+    width: 270px;
+    height: 90px;
+    top: 308px;
+}
+ol{
+    padding-left: 25px;
+}
+.conditions1 li,.conditions2 li,.conditions3 li{
+    list-style: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+li span{
+    display: none;
+}
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}
+.cursorDisabled{
+    cursor: not-allowed !important;
+}
+#accountIdCriteria li,#userNameCriteria li{
+    padding-left: 25px; 
+    position: relative;
+}
+#accountIdCriteria li.green::before {
+    content: "✔️"; 
+    color: green;
+    position: absolute;
+    left: 0;
+}
+
+#accountIdCriteria li.red::before {
+    content: "❌"; 
+    color: red;
+    position: absolute;
+    left: 0;
+}
+#userNameCriteria li.green::before,#passwordCriteria li.green::before{
+    content: "✔️"; 
+    color: green;
+    position: absolute;
+    left: 0;
+}
+#userNameCriteria li.red::before,#passwordCriteria li.red::before{
+    content: "❌"; 
+    color: red;
+    position: absolute;
+    left: 0;
+}
+/* forgot password */
+.forgot_head{
+    display: flex;
+    margin-bottom: 20px;
+}
+.forgot_head img{
+    width: 120px;
+    height: 40px;
+    margin: 10px;
+}
+#closeForgot{
+    position: absolute;
+    top: -9px;
+    right: -8px;
+    font-size: 21px;
+}
+.h1{
+    color: #ff5d00;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-bottom: 2px solid #cbc3c3;
+    margin: 10px;
+    padding: 10px;
+    }
+.oops{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 20px;
+}
+.newpass{
+    color: #ff5d00;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px; 
+}
+.backButtons{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+.d-flex #backTologinButton,#backToOtp{
+    margin: 10px 0px 20px 0px;
+    border: none;
+    color: #ff5d00;
+    background-color: transparent;
+    cursor: pointer;
+}
+#backToOtp{
+    margin-left: 80px;
+}
+
+#loginModal .modal-body , #signUpModal .modal-body{
+    color: #fff;
+}
+
+#invalidMsg {
+    color: red;
+}
+
+#logoutBlock {
+    display: none;
+}
+/* ==========Logout MOdal=========== */
+.logoutModal,.logoutModal.modal-body{
+    background-color: white;
+}
+#logoutModal .modal-body{
+    background-color: white !important;
+}
+/* ==========captcha========= */
+.captcha-container {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+#captchaCanvas {
+    border: 1px solid black;
+    background-color: #ffac13;
+    padding: 5px;
+    width: 120px;  
+    height: 50px;
+}
+
+/*------------eye icon------------*/
+.pwdSec {
+    position: relative;
+    width: 100%;
+}
+.eye-icon {
+    color: black;
+    cursor: pointer;
+    padding: 6px;
+    font-size: 18px; 
+    position: absolute;    
+    right: 15px;
+    top: 50%; 
+    transform: translateY(-50%);   
+}
+
+
+#s_successMsg {
+    display: none;
+}
+.red{
+    display: flex;
+
+}
+.blue{
+    display: flex;
+}
+img{
+    
+}
+
+
